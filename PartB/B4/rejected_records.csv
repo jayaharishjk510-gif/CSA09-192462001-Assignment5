@@ -1,0 +1,6 @@
+LineNumber,RawRecord,RejectionReason
+2,"P1002,DAMAGED LINE","Field count mismatch: Expected 5 fields, found 2"
+4,"","Blank line"
+5,"P1004,192311004,Rahul Sharma,5,FREE_PASS","Non-numeric payment amount: 'FREE_PASS'"
+6,"P1005,192311005,Sneha Nair,ROUTE_A,4200.00","Non-numeric route value: 'ROUTE_A'"
+8,"P1007,192311007,Pooja Reddy,8,3500.00,EXTRA_COLUMN_DATA","Field count mismatch: Expected 5 fields, found 6"
