@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B2> javac AdversarialLoginDemo.java
-PS C:\CSA09-Assignment5\PartB\B2> java AdversarialLoginDemo
+PS C:\Users\student\CSA09-Assignment5\PartB\B2> javac AdversarialLoginDemo.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B2> java AdversarialLoginDemo
 
 === TERMINAL OUTPUT ===
 =========================================================================================

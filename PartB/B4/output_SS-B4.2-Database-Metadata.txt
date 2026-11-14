@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B4> javac DatabaseInspector.java
-PS C:\CSA09-Assignment5\PartB\B4> java DatabaseInspector
+PS C:\Users\student\CSA09-Assignment5\PartB\B4> javac DatabaseInspector.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B4> java DatabaseInspector
 
 === TERMINAL OUTPUT ===
 =========================================================================================

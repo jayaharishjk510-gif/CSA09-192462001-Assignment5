@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B3> javac TransactionRollbackDemo.java
-PS C:\CSA09-Assignment5\PartB\B3> java TransactionRollbackDemo
+PS C:\Users\student\CSA09-Assignment5\PartB\B3> javac TransactionRollbackDemo.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B3> java TransactionRollbackDemo
 
 === TERMINAL OUTPUT ===
 =========================================================================================

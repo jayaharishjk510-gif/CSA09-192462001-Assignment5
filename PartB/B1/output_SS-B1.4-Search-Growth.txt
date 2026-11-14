@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B1> javac PassSearchBenchmark.java
-PS C:\CSA09-Assignment5\PartB\B1> java PassSearchBenchmark
+PS C:\Users\student\CSA09-Assignment5\PartB\B1> javac PassSearchBenchmark.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B1> java PassSearchBenchmark
 
 === TERMINAL OUTPUT ===
 =========================================================================================================

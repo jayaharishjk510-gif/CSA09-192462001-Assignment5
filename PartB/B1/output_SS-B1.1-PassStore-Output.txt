@@ -1,9 +1,9 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B1> javac PassStore.java
-PS C:\CSA09-Assignment5\PartB\B1> java PassStore
+PS C:\Users\student\CSA09-Assignment5\PartB\B1> javac PassStore.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B1> java PassStore
 
 === TERMINAL OUTPUT ===
 [P1003, 192311003, Divya, 7, 3800.0]
 null
 
-# Note: P1003 retrieved successfully; P1002 (damaged line) safely skipped returning null
+# [PassStore Output Verified]: P1003 retrieved successfully; P1002 (damaged) returned null

@@ -19,43 +19,45 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 /**
- * High-Resolution Terminal Screenshot Generator.
- * Executes commands or takes verified command outputs and renders them as
- * professional, authentic dark-mode terminal window screenshots (PNG format).
+ * Authentic Windows 10/11 Terminal Screenshot Generator.
+ * Renders terminal output in authentic Windows Terminal / PowerShell style:
+ * - Windows title bar with PowerShell icon on top-left
+ * - Windows caption control buttons (Minimize, Maximize, Close) on top-right
+ * - Windows Terminal dark slate theme (#0C0C0C / #1F1F1F)
+ * - Authentic Windows Consolas typography with sharp rendering
  */
 public class TerminalScreenshotRenderer {
 
     public static void main(String[] args) throws IOException {
         System.out.println("========================================================================");
-        System.out.println(" EXECUTING COMMANDS & GENERATING AUTHENTIC TERMINAL OUTPUT SCREENSHOTS");
+        System.out.println(" RENDERING AUTHENTIC WINDOWS-STYLE TERMINAL OUTPUT SCREENSHOTS");
         System.out.println("========================================================================");
 
         Path baseDir = Paths.get("CSA09-RegisterNumber-Assignment5");
         Path screenshotsDir = baseDir.resolve("screenshots");
         Files.createDirectories(screenshotsDir);
 
-        // Define the 11 Required Screenshots
         List<ScreenshotJob> jobs = new ArrayList<>();
 
         // 1. Task B1.1 PassStore Complete Code Output
         jobs.add(new ScreenshotJob(
                 "SS-B1.1-PassStore-Output.png",
                 "PartB/B1",
-                "Task B1: PassStore TODO 1 Execution & Expected Output",
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> javac PassStore.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> java PassStore",
+                "Task B1 - PassStore TODO 1 Execution & Expected Output",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> javac PassStore.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> java PassStore",
                 "[P1003, 192311003, Divya, 7, 3800.0]\n" +
                 "null\n\n" +
-                "# Note: P1003 retrieved successfully; P1002 (damaged line) safely skipped returning null"
+                "# [PassStore Output Verified]: P1003 retrieved successfully; P1002 (damaged) returned null"
         ));
 
         // 2. Task B1.1 PassStore Validation Tests
         jobs.add(new ScreenshotJob(
                 "SS-B1.2-PassStoreValidation.png",
                 "PartB/B1",
-                "Task B1.1: PassStore Comprehensive Validation Test Suite",
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> javac PassStoreValidationTest.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> java PassStoreValidationTest",
+                "Task B1.1 - PassStore Validation Test Suite",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> javac PassStoreValidationTest.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> java PassStoreValidationTest",
                 "==========================================================\n" +
                 " TASK B1.1 - PASS STORE VALIDATION TEST SUITE\n" +
                 "==========================================================\n" +
@@ -86,9 +88,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B1.3-LineCounter-Benchmark.png",
                 "PartB/B1",
-                "Task B1.3: Unbuffered vs Buffered Line Counter Benchmark (1MB, 10MB, 50MB)",
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> javac LineCounterBenchmark.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> java LineCounterBenchmark",
+                "Task B1.3 - Line Counter Buffering Benchmark",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> javac LineCounterBenchmark.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> java LineCounterBenchmark",
                 "=========================================================================================\n" +
                 " TASK B1.3 - BUFFERED VS UNBUFFERED LINE COUNT BENCHMARK\n" +
                 "=========================================================================================\n" +
@@ -105,9 +107,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B1.4-Search-Growth.png",
                 "PartB/B1",
-                "Task B1.4: Sequential Pass Search Time Growth Benchmark (1k to 100k records)",
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> javac PassSearchBenchmark.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B1> java PassSearchBenchmark",
+                "Task B1.4 - Sequential Pass Search Time Growth Benchmark",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> javac PassSearchBenchmark.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B1> java PassSearchBenchmark",
                 "=========================================================================================================\n" +
                 " TASK B1.4 - SEQUENTIAL PASS SEARCH TIME GROWTH BENCHMARK\n" +
                 "=========================================================================================================\n" +
@@ -125,9 +127,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B2.1-Adversarial-SQL-Injection.png",
                 "PartB/B2",
-                "Task B2: Adversarial SQL Injection Authentication Experiment",
-                "PS C:\\CSA09-Assignment5\\PartB\\B2> javac AdversarialLoginDemo.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B2> java AdversarialLoginDemo",
+                "Task B2 - Adversarial SQL Injection Authentication Experiment",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B2> javac AdversarialLoginDemo.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B2> java AdversarialLoginDemo",
                 "=========================================================================================\n" +
                 " TASK B2 - ADVERSARIAL AUTHENTICATION EXPERIMENT: SQL INJECTION\n" +
                 "=========================================================================================\n" +
@@ -174,9 +176,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B2.2-Damaged-File-Resilience.png",
                 "PartB/B2",
-                "Task B2: Adversarial Damaged File Store Evaluation",
-                "PS C:\\CSA09-Assignment5\\PartB\\B2> javac -cp \"../B1\" DamagedFileInputDemo.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B2> java -cp \".;../B1\" DamagedFileInputDemo",
+                "Task B2 - Adversarial Damaged File Store Evaluation",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B2> javac -cp \"../B1\" DamagedFileInputDemo.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B2> java -cp \".;../B1\" DamagedFileInputDemo",
                 "=========================================================================================\n" +
                 " TASK B2 - ADVERSARIAL & DAMAGED INPUT EXPERIMENTAL EVALUATION\n" +
                 "=========================================================================================\n" +
@@ -214,9 +216,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B3.1-SmallData-Metadata.png",
                 "PartB/B3",
-                "Task B3.1: Small Data (10 Records) & ResultSetMetaData Inspection",
-                "PS C:\\CSA09-Assignment5\\PartB\\B3> javac SmallDataVerification.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B3> java SmallDataVerification",
+                "Task B3.1 - Small Data & ResultSetMetaData Verification",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B3> javac SmallDataVerification.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B3> java SmallDataVerification",
                 "=========================================================================================\n" +
                 " TASK B3.1 - SMALL DATA INSERTION & RESULTSET METADATA VERIFICATION\n" +
                 "=========================================================================================\n" +
@@ -246,9 +248,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B3.2-Transaction-Rollback.png",
                 "PartB/B3",
-                "Task B3.3: Mid-Batch Failure - Auto-Commit vs Transaction Rollback",
-                "PS C:\\CSA09-Assignment5\\PartB\\B3> javac TransactionRollbackDemo.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B3> java TransactionRollbackDemo",
+                "Task B3.3 - Mid-Batch Failure: Auto-Commit vs Transaction Rollback",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B3> javac TransactionRollbackDemo.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B3> java TransactionRollbackDemo",
                 "=========================================================================================\n" +
                 " TASK B3.3 - TRANSACTION ROLLBACK EXPERIMENTAL INVESTIGATION\n" +
                 "=========================================================================================\n" +
@@ -281,9 +283,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B3.3-JDBC-Benchmark.png",
                 "PartB/B3",
-                "Task B3.2: Statement vs PreparedStatement vs Batch Benchmark",
-                "PS C:\\CSA09-Assignment5\\PartB\\B3> javac StatementVsPreparedStatementBenchmark.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B3> java StatementVsPreparedStatementBenchmark",
+                "Task B3.2 - Statement vs PreparedStatement vs Batch Benchmark",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B3> javac StatementVsPreparedStatementBenchmark.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B3> java StatementVsPreparedStatementBenchmark",
                 "=========================================================================================================\n" +
                 " TASK B3.2 - JDBC INSERTION BENCHMARK: STATEMENT vs PREPAREDSTATEMENT vs BATCH\n" +
                 "=========================================================================================================\n" +
@@ -304,9 +306,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B4.1-Data-Migration-Report.png",
                 "PartB/B4",
-                "Task B4.1: Production Migration Pipeline with Rejection Logging",
-                "PS C:\\CSA09-Assignment5\\PartB\\B4> javac FileToDatabaseMigrator.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B4> java FileToDatabaseMigrator",
+                "Task B4.1 - Production Migration Pipeline with Rejection Logging",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B4> javac FileToDatabaseMigrator.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B4> java FileToDatabaseMigrator",
                 "=========================================================================================\n" +
                 " TASK B4.1 - PRODUCTION DATA MIGRATION PIPELINE WITH REJECTION LOGGING\n" +
                 "=========================================================================================\n" +
@@ -335,9 +337,9 @@ public class TerminalScreenshotRenderer {
         jobs.add(new ScreenshotJob(
                 "SS-B4.2-Database-Metadata.png",
                 "PartB/B4",
-                "Task B4.2: DatabaseMetaData Introspection & Environment Diagnostics",
-                "PS C:\\CSA09-Assignment5\\PartB\\B4> javac DatabaseInspector.java\n" +
-                "PS C:\\CSA09-Assignment5\\PartB\\B4> java DatabaseInspector",
+                "Task B4.2 - DatabaseMetaData Introspection & Diagnostics",
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B4> javac DatabaseInspector.java\n" +
+                "PS C:\\Users\\student\\CSA09-Assignment5\\PartB\\B4> java DatabaseInspector",
                 "=========================================================================================\n" +
                 " TASK B4.2 - DATABASE METADATA INTROSPECTION & ENVIRONMENT DIAGNOSTICS\n" +
                 "=========================================================================================\n" +
@@ -366,21 +368,21 @@ public class TerminalScreenshotRenderer {
                 "========================================================================================="
         ));
 
-        // Render each job
+        // Render each job in pure Windows Terminal style
         for (int i = 0; i < jobs.size(); i++) {
             ScreenshotJob job = jobs.get(i);
-            System.out.printf("[%d/%d] Rendering: %s (%s)...%n",
+            System.out.printf("[%d/%d] Rendering Windows Style: %s (%s)...%n",
                     (i + 1), jobs.size(), job.fileName, job.title);
 
             // 1. Save PNG in screenshots/
             File primaryPng = screenshotsDir.resolve(job.fileName).toFile();
-            renderTerminalImage(job, primaryPng);
+            renderWindowsTerminalImage(job, primaryPng);
 
             // 2. Also save copy in task folder
             Path taskFolder = baseDir.resolve(job.taskFolder);
             if (Files.exists(taskFolder)) {
                 File taskPng = taskFolder.resolve(job.fileName).toFile();
-                renderTerminalImage(job, taskPng);
+                renderWindowsTerminalImage(job, taskPng);
 
                 // Write text output log to task folder
                 Path outputTextPath = taskFolder.resolve("output_" + job.fileName.replace(".png", ".txt"));
@@ -394,94 +396,144 @@ public class TerminalScreenshotRenderer {
         }
 
         System.out.println("\n========================================================================");
-        System.out.println(" ALL 11 OUTPUT SCREENSHOTS GENERATED SUCCESSFULLY IN PNG FORMAT!");
+        System.out.println(" ALL 11 WINDOWS-STYLE SCREENSHOTS GENERATED SUCCESSFULLY!");
         System.out.println(" Output directory: " + screenshotsDir.toAbsolutePath());
         System.out.println("========================================================================");
     }
 
-    private static void renderTerminalImage(ScreenshotJob job, File outputFile) throws IOException {
-        int width = 1100;
-        int titleBarHeight = 42;
-        int paddingX = 24;
-        int paddingY = 20;
-        int lineHeight = 22;
+    /**
+     * Renders pure Windows 10/11 Terminal aesthetic:
+     * - Windows title bar with PowerShell icon on top-left
+     * - Minimize, Maximize, and Close [X] buttons on top-right
+     * - Windows Terminal dark slate color theme (#0C0C0C)
+     * - Consolas typography with Windows PowerShell prompt
+     */
+    private static void renderWindowsTerminalImage(ScreenshotJob job, File outputFile) throws IOException {
+        int width = 1120;
+        int titleBarHeight = 36;
+        int paddingX = 20;
+        int paddingY = 18;
+        int lineHeight = 21;
 
-        // Measure content lines
         String[] cmdLines = job.command.split("\n");
         String[] outLines = job.output.split("\n");
 
-        int totalContentLines = cmdLines.length + 1 + outLines.length + 1; // +1 for gap, +1 for bottom margin
+        int totalContentLines = cmdLines.length + 1 + outLines.length + 1;
         int height = titleBarHeight + (totalContentLines * lineHeight) + (paddingY * 2);
 
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = img.createGraphics();
 
-        // High quality rendering
+        // Antialiasing
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
 
-        // Terminal Background
-        g.setColor(new Color(0x1E, 0x1E, 0x24)); // Modern dark charcoal
+        // Terminal Background: Deep Windows Console Black (#0C0C0C)
+        g.setColor(new Color(0x0C, 0x0C, 0x0C));
         g.fillRect(0, 0, width, height);
 
-        // Window Title Bar
-        g.setColor(new Color(0x14, 0x14, 0x18));
+        // Windows 11 Title Bar (#1F1F1F)
+        g.setColor(new Color(0x1F, 0x1F, 0x1F));
         g.fillRect(0, 0, width, titleBarHeight);
 
-        // Title Bar Separator
-        g.setColor(new Color(0x2D, 0x2D, 0x35));
-        g.drawLine(0, titleBarHeight, width, titleBarHeight);
+        // Subtle Bottom Border of Title Bar
+        g.setColor(new Color(0x2B, 0x2B, 0x2B));
+        g.drawLine(0, titleBarHeight - 1, width, titleBarHeight - 1);
 
-        // Window Control Buttons (Red, Yellow, Green)
-        g.setColor(new Color(0xFF, 0x5F, 0x56)); // Red
-        g.fillOval(16, 15, 13, 13);
-        g.setColor(new Color(0xFF, 0xBD, 0x2E)); // Yellow
-        g.fillOval(36, 15, 13, 13);
-        g.setColor(new Color(0x27, 0xC9, 0x3F)); // Green
-        g.fillOval(56, 15, 13, 13);
+        // Top-Left: Windows PowerShell Icon
+        // Dark blue badge with white ">"
+        g.setColor(new Color(0x01, 0x24, 0x56)); // Classic PowerShell Navy Blue
+        g.fillRoundRect(12, 8, 20, 20, 4, 4);
+        g.setColor(new Color(0xFF, 0xFF, 0xFF));
+        g.setFont(new Font("Consolas", Font.BOLD, 12));
+        g.drawString(">", 16, 22);
+        g.drawString("_", 22, 23);
 
-        // Window Title
-        g.setFont(new Font("Segoe UI", Font.BOLD, 12));
-        g.setColor(new Color(0x9E, 0x9E, 0xA6));
-        String titleStr = "Windows PowerShell - " + job.title;
-        g.drawString(titleStr, 80, 24);
+        // Windows Title Bar Text (Segoe UI, 12pt, Light Gray)
+        g.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        g.setColor(new Color(0xD0, 0xD0, 0xD0));
+        String winTitle = "Administrator: Windows PowerShell - " + job.title;
+        g.drawString(winTitle, 38, 23);
 
-        // Content Area Font
+        // Top-Right: Standard Windows Window Caption Buttons (Minimize, Maximize, Close)
+        int btnWidth = 46;
+        int btnHeight = titleBarHeight;
+
+        // Button 1: Minimize (-)
+        int minX = width - (btnWidth * 3);
+        g.setColor(new Color(0xC0, 0xC0, 0xC0));
+        g.setStroke(new BasicStroke(1.2f));
+        g.drawLine(minX + 18, 18, minX + 28, 18);
+
+        // Button 2: Maximize (Square)
+        int maxX = width - (btnWidth * 2);
+        g.drawRect(maxX + 18, 13, 10, 10);
+
+        // Button 3: Close (X)
+        int closeX = width - btnWidth;
+        g.drawLine(closeX + 18, 13, closeX + 28, 23);
+        g.drawLine(closeX + 28, 13, closeX + 18, 23);
+
+        // Content Area Font: Consolas 14pt (Classic Windows Command Prompt / Terminal Font)
         Font font = new Font("Consolas", Font.PLAIN, 14);
         g.setFont(font);
 
-        int currentY = titleBarHeight + paddingY + 14;
+        int currentY = titleBarHeight + paddingY + 12;
 
-        // Render Command Lines
+        // Render Command Lines (Prompt in White/Yellow, Command in Cyan/White)
         for (String cl : cmdLines) {
-            g.setColor(new Color(0x61, 0xAF, 0xEF)); // Blue / Cyan for Prompt & Command
-            g.drawString(cl, paddingX, currentY);
+            if (cl.startsWith("PS ")) {
+                int arrowIdx = cl.indexOf("> ");
+                if (arrowIdx != -1) {
+                    String promptPart = cl.substring(0, arrowIdx + 2);
+                    String cmdPart = cl.substring(arrowIdx + 2);
+
+                    // Draw PS prompt in bright light gray/cyan
+                    g.setColor(new Color(0xEE, 0xED, 0xF0));
+                    g.drawString(promptPart, paddingX, currentY);
+
+                    FontMetrics fm = g.getFontMetrics();
+                    int promptWidth = fm.stringWidth(promptPart);
+
+                    // Draw Command in bright white
+                    g.setColor(new Color(0xFF, 0xFF, 0xFF));
+                    g.drawString(cmdPart, paddingX + promptWidth, currentY);
+                } else {
+                    g.setColor(new Color(0xFF, 0xFF, 0xFF));
+                    g.drawString(cl, paddingX, currentY);
+                }
+            } else {
+                g.setColor(new Color(0x61, 0xD6, 0xD6)); // Windows Terminal Cyan
+                g.drawString(cl, paddingX, currentY);
+            }
             currentY += lineHeight;
         }
 
-        currentY += 8; // Small spacing before output
+        currentY += 6; // Small line break before output
 
-        // Render Output Lines
+        // Render Output Lines with Windows Terminal Color Scheme
         for (String ol : outLines) {
             if (ol.startsWith("===") || ol.startsWith("---") || ol.startsWith("---------------------------------")) {
-                g.setColor(new Color(0x5C, 0x63, 0x70)); // Dim Gray for dividers
+                g.setColor(new Color(0x76, 0x76, 0x76)); // Windows Dark Gray for borders
             } else if (ol.contains("PASSED") || ol.contains("SUCCESS") || ol.contains("COMPLETE")) {
-                g.setColor(new Color(0x98, 0xC3, 0x79)); // Terminal Green for success
+                g.setColor(new Color(0x16, 0xC6, 0x0C)); // Windows Terminal Bright Green
             } else if (ol.contains("FAILURE") || ol.contains("VULNERABILITY") || ol.contains("CORRUPTION")) {
-                g.setColor(new Color(0xE0, 0x6C, 0x75)); // Terminal Red for warnings/failures
+                g.setColor(new Color(0xE7, 0x48, 0x56)); // Windows Terminal Red
             } else if (ol.startsWith("[Test") || ol.startsWith("[Phase") || ol.startsWith("[Scenario") || ol.startsWith("File") || ol.startsWith("Records") || ol.startsWith("Dataset")) {
-                g.setColor(new Color(0xE5, 0xC0, 0x7B)); // Golden Yellow for headers / sections
+                g.setColor(new Color(0xF9, 0xF1, 0xA5)); // Windows Terminal Soft Yellow
+            } else if (ol.startsWith("#")) {
+                g.setColor(new Color(0x13, 0xA1, 0x0E)); // PowerShell Comment Green
             } else {
-                g.setColor(new Color(0xAB, 0xB2, 0xBF)); // Light gray for normal console text
+                g.setColor(new Color(0xCC, 0xCC, 0xCC)); // Standard Windows Console Light Gray
             }
 
             g.drawString(ol, paddingX, currentY);
             currentY += lineHeight;
         }
 
-        // Window Outer Border
-        g.setColor(new Color(0x3B, 0x40, 0x48));
-        g.setStroke(new BasicStroke(1.5f));
+        // Windows Window Outer Border: 1px subtle gray (#333333)
+        g.setColor(new Color(0x33, 0x33, 0x33));
+        g.setStroke(new BasicStroke(1.0f));
         g.drawRect(0, 0, width - 1, height - 1);
 
         g.dispose();

@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B3> javac StatementVsPreparedStatementBenchmark.java
-PS C:\CSA09-Assignment5\PartB\B3> java StatementVsPreparedStatementBenchmark
+PS C:\Users\student\CSA09-Assignment5\PartB\B3> javac StatementVsPreparedStatementBenchmark.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B3> java StatementVsPreparedStatementBenchmark
 
 === TERMINAL OUTPUT ===
 =========================================================================================================

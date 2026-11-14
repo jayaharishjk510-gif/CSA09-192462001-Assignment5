@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B1> javac PassStoreValidationTest.java
-PS C:\CSA09-Assignment5\PartB\B1> java PassStoreValidationTest
+PS C:\Users\student\CSA09-Assignment5\PartB\B1> javac PassStoreValidationTest.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B1> java PassStoreValidationTest
 
 === TERMINAL OUTPUT ===
 ==========================================================

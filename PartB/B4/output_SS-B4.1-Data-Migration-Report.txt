@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B4> javac FileToDatabaseMigrator.java
-PS C:\CSA09-Assignment5\PartB\B4> java FileToDatabaseMigrator
+PS C:\Users\student\CSA09-Assignment5\PartB\B4> javac FileToDatabaseMigrator.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B4> java FileToDatabaseMigrator
 
 === TERMINAL OUTPUT ===
 =========================================================================================

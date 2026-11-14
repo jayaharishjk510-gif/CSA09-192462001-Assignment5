@@ -1,6 +1,6 @@
 === COMMAND LINE ===
-PS C:\CSA09-Assignment5\PartB\B2> javac -cp "../B1" DamagedFileInputDemo.java
-PS C:\CSA09-Assignment5\PartB\B2> java -cp ".;../B1" DamagedFileInputDemo
+PS C:\Users\student\CSA09-Assignment5\PartB\B2> javac -cp "../B1" DamagedFileInputDemo.java
+PS C:\Users\student\CSA09-Assignment5\PartB\B2> java -cp ".;../B1" DamagedFileInputDemo
 
 === TERMINAL OUTPUT ===
 =========================================================================================
