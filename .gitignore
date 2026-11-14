@@ -1,0 +1,10 @@
+# Compiled Java Class Files
+*.class
+
+# Large generated log files for micro-benchmarks (can be regenerated with TestDataGenerator.java)
+test-data/log_50mb.txt
+
+# Temporary / OS files
+*.tmp
+.DS_Store
+Thumbs.db

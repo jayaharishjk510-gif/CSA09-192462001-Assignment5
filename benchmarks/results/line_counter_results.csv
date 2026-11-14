@@ -1,0 +1,4 @@
+File,SizeBytes,UnbufferedLines,UnbufferedTimeMs,BufferedLines,BufferedTimeMs,SpeedupFactor
+log_1mb.txt,1048654,12773,1535.39,12773,4.01,383.20
+log_10mb.txt,10485821,127721,14656.23,127721,7.61,1926.68
+log_50mb.txt,52428868,638598,69158.36,638598,68.16,1014.71

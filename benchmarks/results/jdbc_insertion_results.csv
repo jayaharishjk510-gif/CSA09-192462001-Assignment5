@@ -1,0 +1,4 @@
+RecordCount,DatasetFile,StatementMs,PreparedStmtMs,BatchMs,BatchVsStmtSpeedup
+1000,passes_1k.csv,452.80,284.45,11.98,37.81
+10000,passes_10k.csv,4522.55,2810.03,107.69,42.00
+100000,passes_100k.csv,45086.46,28023.08,1068.09,42.21

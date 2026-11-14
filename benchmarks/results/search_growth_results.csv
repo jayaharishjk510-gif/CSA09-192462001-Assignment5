@@ -1,0 +1,5 @@
+Dataset,RecordCount,FileSizeBytes,BestCaseMs,AvgCaseMs,WorstCaseMs,MissScanMs
+passes_1k.csv,1000,42048,0.5930,2.8164,3.5189,2.1028
+passes_10k.csv,10000,420363,0.8628,10.0115,24.9463,8.9231
+passes_50k.csv,50000,2141783,0.5092,15.4982,14.2837,13.6308
+passes_100k.csv,100000,4294554,0.4762,9.8118,19.9819,20.8128
