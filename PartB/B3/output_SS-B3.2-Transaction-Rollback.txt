@@ -1,0 +1,31 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B3> javac TransactionRollbackDemo.java
+PS C:\CSA09-Assignment5\PartB\B3> java TransactionRollbackDemo
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B3.3 - TRANSACTION ROLLBACK EXPERIMENTAL INVESTIGATION
+=========================================================================================
+Generated 1,000 records with a poison pill (invalid amount) at row #501.
+
+-----------------------------------------------------------------------------------------
+ CASE A: Batch Insert with Auto-Commit = TRUE
+-----------------------------------------------------------------------------------------
+  [FAILURE OCCURRED] Error on row 501: For input string: "INVALID_AMOUNT_STRING"
+  Auto-commit was ON: Prior 500 rows were already permanently committed to the database!
+  Table Row Count in Database after crash: 500 rows!
+  Result: PARTIAL WRITE CORRUPTION! 500 records stranded, remaining 500 lost.
+
+-----------------------------------------------------------------------------------------
+ CASE B: Single Transaction (PassLoader.loadAll with rollback())
+-----------------------------------------------------------------------------------------
+  [FAILURE OCCURRED] Error on row 501: For input string: "INVALID_AMOUNT_STRING"
+  Catch block triggered -> con.rollback() EXECUTED!
+  Table Row Count in Database after rollback: 0 rows!
+  Result: COMPLETE ATOMICITY PRESERVED! Database remains in a clean, consistent state.
+
+=========================================================================================
+ ACID VERIFICATION SUMMARY:
+ - Atomicity: All 1,000 records commit together, or none at all.
+ - Consistency: Invariant 'No corrupted pass records in table' maintained.
+=========================================================================================

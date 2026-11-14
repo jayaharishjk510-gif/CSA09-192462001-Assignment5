@@ -1,0 +1,36 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B2> javac -cp "../B1" DamagedFileInputDemo.java
+PS C:\CSA09-Assignment5\PartB\B2> java -cp ".;../B1" DamagedFileInputDemo
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B2 - ADVERSARIAL & DAMAGED INPUT EXPERIMENTAL EVALUATION
+=========================================================================================
+File contents of damaged_passes.csv:
+  Line  1: P1001,192311001,Arun Kumar,12,4500.00
+  Line  2: P1002,DAMAGED LINE
+  Line  3: P1003,192311003,Divya Rajan,7,3800.00
+  Line  4: <EMPTY LINE>
+  Line  5: P1004,192311004,Rahul Sharma,5,FREE_PASS
+  Line  6: P1005,192311005,Sneha Nair,ROUTE_A,4200.00
+  Line  7: P1006,192311006,Karthik Iyer,12,4500.00
+  Line  8: P1007,192311007,Pooja Reddy,8,3500.00,EXTRA_COLUMN_DATA
+
+--- Testing Specific Adversarial Scenarios ---
+
+[Scenario 1: Truncated Fields - Line 2 (P1002)]
+  Search result for 'P1002': null
+  Observation: fields.length == 2 != 5 -> Skipped safely, returned null.
+
+[Scenario 2: Empty Line - Line 4]
+  Observation: store.find() skips blank lines without throwing exceptions.
+
+[Scenario 3: Fault Tolerance - Finding Valid Record Following Corrupted Lines (P1003)]
+  Search result for 'P1003': [P1003, 192311003, Divya Rajan, 7, 3800.00]
+  Observation: Corruption in earlier lines did NOT halt or corrupt subsequent searches!
+
+[Scenario 4: Route Listing Resilience - Filtering Route 12]
+  Passes found on Route 12: 2
+    [P1001, 192311001, Arun Kumar, 12, 4500.00]
+    [P1006, 192311006, Karthik Iyer, 12, 4500.00]
+=========================================================================================

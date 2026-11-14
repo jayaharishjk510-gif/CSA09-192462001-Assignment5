@@ -1,0 +1,45 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B2> javac AdversarialLoginDemo.java
+PS C:\CSA09-Assignment5\PartB\B2> java AdversarialLoginDemo
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B2 - ADVERSARIAL AUTHENTICATION EXPERIMENT: SQL INJECTION
+=========================================================================================
+
+[Phase 1] Theoretical Analysis of Crafted SQL String:
+  Raw Input id:   admin' -- 
+  Raw Input pwd:  WrongPassword999
+  Resulting SQL:  SELECT * FROM users WHERE id='admin' -- ' AND pwd='WrongPassword999'
+  Explanation: The '-- ' comment sequence causes the database SQL parser to ignore
+               the subsequent AND pwd='...' condition entirely!
+               The query executes as: SELECT * FROM users WHERE id='admin'
+
+[Phase 2] Executing UnsafeLogin vs SecureLogin Behavior Simulation:
+
+--- Test 1: Legitimate Admin Credentials ---
+  Input ID:  [admin]
+  Input Pwd: [Admin@2026_SecureKey]
+  [UNSAFE LOGIN]   Access Granted? true (VULNERABILITY EXPLOITED!)
+  [SECURE LOGIN]   Access Granted? true (Authenticated)
+
+--- Test 2: Invalid Password (Normal User) ---
+  Input ID:  [admin]
+  Input Pwd: [WrongPassword999]
+  [UNSAFE LOGIN]   Access Granted? false (Rejected)
+  [SECURE LOGIN]   Access Granted? false (ATTACK BLOCKED - SAFE)
+
+--- Test 3: ADVERSARIAL ATTACK - SQL Comment Payload ('admin\' -- ') ---
+  Input ID:  [admin' -- ]
+  Input Pwd: [WrongPassword999]
+  [UNSAFE LOGIN]   Access Granted? true (VULNERABILITY EXPLOITED!)
+  [SECURE LOGIN]   Access Granted? false (ATTACK BLOCKED - SAFE)
+
+--- Test 4: ADVERSARIAL ATTACK - Tautology Payload ('' OR '1'='1') ---
+  Input ID:  [' OR '1'='1]
+  Input Pwd: [WrongPassword999]
+  [UNSAFE LOGIN]   Access Granted? true (VULNERABILITY EXPLOITED!)
+  [SECURE LOGIN]   Access Granted? false (ATTACK BLOCKED - SAFE)
+
+=========================================================================================
+ SUMMARY: PreparedStatement safely parameterizes input via binary protocol, blocking SQLi.

@@ -1,0 +1,31 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B4> javac DatabaseInspector.java
+PS C:\CSA09-Assignment5\PartB\B4> java DatabaseInspector
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B4.2 - DATABASE METADATA INTROSPECTION & ENVIRONMENT DIAGNOSTICS
+=========================================================================================
+--- System & Driver Diagnostics (via java.sql.DatabaseMetaData) ---
+  Database Product Name:     MySQL
+  Database Product Version:  8.0.36-commercial
+  JDBC Driver Name:          MySQL Connector/J
+  JDBC Driver Version:       mysql-connector-j-8.3.0
+  Compliant JDBC Spec:       Version 4.2
+
+--- Introspecting Schema Tables in 'bus_pass_db' ---
+  Table Name      Table Type   Functional Scope                             
+  ----------------------------------------------------------------------------
+  users           TABLE        Stores administrative credentials & security roles
+  bus_pass        TABLE        High-throughput student transport pass records
+  student         TABLE        Master student academic and department records
+  wallet          TABLE        Hostel and canteen monetary transaction accounts
+  ----------------------------------------------------------------------------
+  Schema Integrity Status: ALL 4 REQUIRED TABLES CONFIRMED PRESENT.
+
+-----------------------------------------------------------------------------------------
+ ARCHITECTURAL UTILITY IN MULTI-SERVER / PRODUCTION DEPLOYMENTS:
+ 1. Dialect Compatibility: Validates remote engine syntax and capabilities before execution.
+ 2. Schema Verification: Detects missing tables/indexes preventing runtime crashes.
+ 3. Driver Capabilities: Checks batch rewrite and connection pooling support.
+=========================================================================================

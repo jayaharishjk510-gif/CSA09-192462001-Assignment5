@@ -1,0 +1,28 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B3> javac SmallDataVerification.java
+PS C:\CSA09-Assignment5\PartB\B3> java SmallDataVerification
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B3.1 - SMALL DATA INSERTION & RESULTSET METADATA VERIFICATION
+=========================================================================================
+Loaded 10 sample records for insertion verification.
+
+--- Inspecting Table Schema via ResultSetMetaData ---
+Col# Column Name     Data Type            Nullable / Key      
+------------------------------------------------------------------
+1    pass_id         VARCHAR(20)          NO (Primary Key)    
+2    reg_no          VARCHAR(20)          NO                  
+3    name            VARCHAR(100)         NO                  
+4    route_no        INT                  NO                  
+5    amount          DOUBLE               NO                  
+------------------------------------------------------------------
+Metadata verification: All 5 columns map strictly to entity attributes.
+
+Sample records to insert (first 3):
+  Pass #1: ID=P000001, RegNo=192310001, Name=Student 1, Route=10, Amount=4500.00
+  Pass #2: ID=P000002, RegNo=192310002, Name=Student 2, Route=10, Amount=4500.00
+  Pass #3: ID=P000003, RegNo=192310003, Name=Student 3, Route=10, Amount=4500.00
+
+All 10 records verified against column definitions and integrity constraints.
+=========================================================================================

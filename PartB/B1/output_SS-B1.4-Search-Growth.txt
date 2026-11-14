@@ -1,0 +1,16 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B1> javac PassSearchBenchmark.java
+PS C:\CSA09-Assignment5\PartB\B1> java PassSearchBenchmark
+
+=== TERMINAL OUTPUT ===
+=========================================================================================================
+ TASK B1.4 - SEQUENTIAL PASS SEARCH TIME GROWTH BENCHMARK
+=========================================================================================================
+Dataset         Records      Best Case (ms)   Avg Case (ms)    Worst Case (ms)  Miss Scan (ms)  
+---------------------------------------------------------------------------------------------------------
+passes_1k.csv   1000         0.593            2.816            3.519            2.103           
+passes_10k.csv  10000        0.863            10.012           24.946           8.923           
+passes_50k.csv  50000        0.509            15.498           14.284           13.631          
+passes_100k.csv 100000       0.476            9.812            19.982           20.813          
+=========================================================================================================
+ Benchmark completed. Results saved to: benchmarks/results/search_growth_results.csv

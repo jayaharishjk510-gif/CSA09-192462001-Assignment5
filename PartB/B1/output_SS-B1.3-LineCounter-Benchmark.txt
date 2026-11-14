@@ -1,0 +1,15 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B1> javac LineCounterBenchmark.java
+PS C:\CSA09-Assignment5\PartB\B1> java LineCounterBenchmark
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B1.3 - BUFFERED VS UNBUFFERED LINE COUNT BENCHMARK
+=========================================================================================
+File         Size (Bytes)   Unbuffered Time (ms) Buffered Time (ms)   Speedup     
+-----------------------------------------------------------------------------------------
+log_1mb.txt  1048654        1535.39              4.01                 383.2     x
+log_10mb.txt 10485821       14656.23             7.61                 1926.7    x
+log_50mb.txt 52428868       69158.36             68.16                1014.7    x
+=========================================================================================
+ Benchmark completed. Results saved to: benchmarks/results/line_counter_results.csv

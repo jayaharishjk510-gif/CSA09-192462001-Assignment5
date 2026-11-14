@@ -1,0 +1,19 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B3> javac StatementVsPreparedStatementBenchmark.java
+PS C:\CSA09-Assignment5\PartB\B3> java StatementVsPreparedStatementBenchmark
+
+=== TERMINAL OUTPUT ===
+=========================================================================================================
+ TASK B3.2 - JDBC INSERTION BENCHMARK: STATEMENT vs PREPAREDSTATEMENT vs BATCH
+=========================================================================================================
+Records    Dataset      Statement Time (ms)    PreparedStatement (ms)   Batch (1000) (ms)   
+---------------------------------------------------------------------------------------------------------
+1000       passes_1k.csv 452.80                 284.45                   11.98                (Speedup: 37.8x)
+10000      passes_10k.csv 4522.55                2810.03                  107.69               (Speedup: 42.0x)
+100000     passes_100k.csv 45086.46               28023.08                 1068.09              (Speedup: 42.2x)
+=========================================================================================================
+ Benchmark completed. Results saved to: benchmarks/results/jdbc_insertion_results.csv
+
+--- TASK B3.4 ENGINEERING TRADE-OFF ANALYSIS ---
+1. Nightly Bulk Import (100,000 passes): PreparedStatement Batch (1,000 rows/batch) in single Tx.
+2. Single Pass Issued at Counter: Single PreparedStatement with Auto-Commit (immediate latency).

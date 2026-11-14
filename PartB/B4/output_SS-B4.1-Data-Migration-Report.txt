@@ -1,0 +1,27 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B4> javac FileToDatabaseMigrator.java
+PS C:\CSA09-Assignment5\PartB\B4> java FileToDatabaseMigrator
+
+=== TERMINAL OUTPUT ===
+=========================================================================================
+ TASK B4.1 - PRODUCTION DATA MIGRATION PIPELINE WITH REJECTION LOGGING
+=========================================================================================
+Input Source File: test-data\damaged_passes.csv
+Rejection Log:     PartB\B4\rejected_records.csv
+
+-----------------------------------------------------------------------------------------
+ MIGRATION EXECUTION SUMMARY
+-----------------------------------------------------------------------------------------
+Total Lines Scanned:    8
+Valid Records Migrated: 3
+Corrupted / Rejected:   5
+Pipeline Elapsed Time:  44.67 ms
+-----------------------------------------------------------------------------------------
+
+Rejections detected. Sample entries from rejected_records.csv:
+  Line 2: [P1002,DAMAGED LINE] -> Field count mismatch: Expected 5 fields, found 2
+  Line 4: [EMPTY LINE] -> Blank line skipped
+  Line 5: [P1004,192311004,Rahul Sharma,5,FREE_PASS] -> Non-numeric payment amount: 'FREE_PASS'
+  Line 6: [P1005,192311005,Sneha Nair,ROUTE_A,4200.00] -> Non-numeric route value: 'ROUTE_A'
+  Line 8: [P1007,192311007,Pooja Reddy,8,3500.00,EXTRA_COLUMN_DATA] -> Field count mismatch: Expected 5 fields, found 6
+=========================================================================================

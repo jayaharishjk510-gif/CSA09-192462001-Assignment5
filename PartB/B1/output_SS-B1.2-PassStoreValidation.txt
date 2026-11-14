@@ -1,0 +1,29 @@
+=== COMMAND LINE ===
+PS C:\CSA09-Assignment5\PartB\B1> javac PassStoreValidationTest.java
+PS C:\CSA09-Assignment5\PartB\B1> java PassStoreValidationTest
+
+=== TERMINAL OUTPUT ===
+==========================================================
+ TASK B1.1 - PASS STORE VALIDATION TEST SUITE
+==========================================================
+
+[Test 1] Find Existing Pass ID ('P1003'):
+  Result: [P1003, 192311003, Divya Rajan, 7, 3800.0]
+  Verification: PASSED (Found correct record)
+
+[Test 2] Find Non-existent Pass ID ('P9999'):
+  Result: null
+  Verification: PASSED (Returned null as expected)
+
+[Test 3] Find Damaged Line ('P1002'):
+  Result: null
+  Verification: PASSED (Skipped damaged record without crashing)
+
+[Test 4] List Passes on Route 12:
+  Found: [P1001, 192311001, Arun Kumar, 12, 4500.0]
+  Found: [P1004, 192311004, Karthik Iyer, 12, 4500.0]
+  Verification: PASSED (Found exactly 2 passes on Route 12)
+
+==========================================================
+ ALL B1.1 TESTS COMPLETED SUCCESSFULLY
+==========================================================
